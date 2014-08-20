@@ -152,6 +152,9 @@ namespace videocore {
                 setStatus(kStreamStatusEndStream, true);
             }
             if(event & NSStreamEventErrorOccurred) {
+                NSStream *str = (NSStream *)stream;
+                NSError *err = [str streamError];
+                NSLog(@"Stream Error %i: %@", [err code], [err localizedDescription]);
                 setStatus(kStreamStatusErrorEncountered);
             }
         }

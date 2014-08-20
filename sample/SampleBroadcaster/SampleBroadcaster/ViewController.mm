@@ -66,7 +66,9 @@
         case VCSessionStatePreviewStarted:
         case VCSessionStateEnded:
         case VCSessionStateError:
-            [_session startRtmpSessionWithURL:@"rtmp://192.168.1.151/live" andStreamKey:@"myStream"];
+//            [_session startRtmpSessionWithURL:@"rtmp://10.0.1.5/live" andStreamKey:@"myStream"];
+            [_session startRtmpSessionWithURL:@"rtmp://stream.lax.cine.io/20C45E/cines" andStreamKey:@"lJLCWe2mme?treble7&amp;adbe-live-event=lJLCWe2mme"];
+//            [_session startRtmpSessionWithURL:@"rtmp://ec2-54-201-159-227.us-west-2.compute.amazonaws.com/live" andStreamKey:@"myStream"];
             break;
         default:
             [_session endRtmpSession];

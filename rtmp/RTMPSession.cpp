@@ -194,14 +194,14 @@ namespace videocore
             size_t size = m_streamOutRemainder.size();
 
             m_streamOutRemainder.read(&buffer, size, false); // Read the entire buffer, but do not advance the read pointer.
-            //printf("Remain %8zu\n ", size);
+            printf("Remain %8zu\n ", size);
             size_t sent = m_streamSession->write(buffer, size);
 
             m_streamOutRemainder.read(&buffer, sent, true); // Advance the read pointer as far as we were able to send.
         }
 
         while((m_streamSession->status() & kStreamStatusWriteBufferHasSpace) && m_streamOutQueue.size() > 0) {
-            //printf("StreamQueue: %zu\n", m_streamOutQueue.size());
+            printf("StreamQueue: %zu\n", m_streamOutQueue.size());
             std::shared_ptr<Buffer> front = m_streamOutQueue.front();
             m_streamOutQueue.pop_front();
             uint8_t* buf;
