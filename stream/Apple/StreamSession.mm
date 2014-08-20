@@ -149,6 +149,7 @@ namespace videocore {
                 setStatus(kStreamStatusWriteBufferHasSpace);
             }
             if(event & NSStreamEventEndEncountered) {
+                NSLog(@"Stream Ended");
                 setStatus(kStreamStatusEndStream, true);
             }
             if(event & NSStreamEventErrorOccurred) {
